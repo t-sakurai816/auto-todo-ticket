@@ -17,8 +17,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
-    <!-- css -->
-    <link rel="stylesheet" href="css/index.css">
+  <!-- css -->
+  <link rel="stylesheet" href="css/index.css">
 
 </head>
 
@@ -29,7 +29,63 @@
   <div class="main">
     <div class="container">
       <div class="row">
-
+        <!--テーブルをレスポンシブにする-->
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <form action="" method="post">
+              <thead>
+                <!--今回はなし-->
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="text-left">案件名</th>
+                  <th class="text-center btn-danger">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）◯◯様"></td>
+                </tr>
+                <tr>
+                  <th class="text-left">対象サーバー</th>
+                  <th class="text-center btn-danger">必須</th>
+                  <td><input type="text" class="form-control" placeholder="host名 or IP"></td>
+                </tr>
+                <tr>
+                  <th class="text-left">対象ドメイン名</th>
+                  <th class="text-center btn-danger">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）hoge.example.com"></td>
+                </tr>
+                <tr>
+                  <th class="text-left">作業目的</th>
+                  <th class="text-center btn-danger">必須</th>
+                  <td><input type="text" class="form-control" value="CSRの作成"></td>
+                </tr>
+                <tr>
+                  <th class="text-left">期限</th>
+                  <th class="text-center btn-danger">必須</th>
+                  <td><input type="date" class="form-control" placeholder="2020/MM/DD"></td>
+                </tr>
+                <tr>
+                  <th class="text-left">報告内容</th>
+                  <th class="text-center btn-danger">必須</th>
+                  <td><textarea class="form-control" >設定完了報告、zipファイルの添付</textarea></td>
+                </tr>
+                <tr>
+                  <th class="text-left">チケット作成者</th>
+                  <th class="text-center btn-danger">必須</th>
+                  <td><select name="" class="selectpicker" id="targetSelect" size="1">
+                    <option >foo</option>
+                    <option >bar</option>
+                    <option >hoge</option>
+                    <option >その他</option>
+                  </select></td>
+                </tr>
+                <tr>
+                  <th class="text-left">その他</th>
+                  <th class="text-center btn-warning">必須</th>
+                  <td><textarea class="form-control" placeholder="なにか伝えたいことがあれば入力"></textarea></td>
+                </tr>
+              </tbody>
+            </form>
+          </table>
+        </div>
       </div>
     </div>
   </div>
