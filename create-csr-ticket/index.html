@@ -32,7 +32,7 @@
         <!--テーブルをレスポンシブにする-->
         <div class="table-responsive">
           <table class="table table-bordered">
-            <form action="" method="post">
+            <form action="hoge.php" method="post" id="csr-form">
               <thead>
                 <!--今回はなし-->
               </thead>
@@ -88,38 +88,41 @@
                 <!-- CSR情報 -->
                 <tr><th colspan="3" class="text-center">CSR情報</th></tr>
                 <tr>
-                  <th class="text-left"></th>
-                  <th class="text-center bg-danger text-white"></th>
-                  <td></td>
+                  <th class="text-left">国（C)</th>
+                  <th class="text-center bg-danger text-white">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）◯◯様"></td>
                 </tr>
                 <tr>
-                  <th class="text-left"></th>
-                  <th class="text-center bg-danger text-white"></th>
-                  <td></td>
+                  <th class="text-left">都道府県（S)</th>
+                  <th class="text-center bg-danger text-white">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）Tokyo"></td>
                 </tr>
                 <tr>
-                  <th class="text-left"></th>
-                  <th class="text-center bg-danger text-white"></th>
-                  <td></td>
+                  <th class="text-left">市区町村（L)</th>
+                  <th class="text-center bg-danger text-white">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）Chuo-ku"></td>
                 </tr>
                 <tr>
-                  <th class="text-left"></th>
-                  <th class="text-center bg-danger text-white"></th>
-                  <td></td>
+                  <th class="text-left">コモンネーム（CN）</th>
+                  <th class="text-center bg-danger text-white">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）hoge.example.com"></td>
                 </tr>
                 <tr>
-                  <th class="text-left"></th>
-                  <th class="text-center bg-danger text-white"></th>
-                  <td></td>
+                  <th class="text-left">組織名（O）</th>
+                  <th class="text-center bg-danger text-white">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）TOWN, Inc."></td>
                 </tr>
                 <tr>
-                  <th class="text-left"></th>
-                  <th class="text-center bg-danger text-white"></th>
-                  <td></td>
+                  <th class="text-left">部署名（OU)</th>
+                  <th class="text-center bg-danger text-white">必須</th>
+                  <td><input type="text" class="form-control" placeholder="例）Head Office"></td>
                 </tr>
               </tbody>
+              <caption>CSR情報がないところは - と記入してください</caption>
             </form>
           </table>
+          <!-- <form>の外にあるので、<form>のidを指定する -->
+          <button type="submit" class="btn btn-primary" form="csr-form">送信</button>
         </div>
       </div>
     </div>
