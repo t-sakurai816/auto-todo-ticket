@@ -2,3 +2,7 @@ h1 {
   text-align: center;
   margin: 1rem 0;/*上ちょっとあける*/
 }
+
+button{
+  margin: 1rem 0 2.5rem 0;/*上右下左*/
+}
