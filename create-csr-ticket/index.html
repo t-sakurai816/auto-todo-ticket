@@ -43,18 +43,18 @@
                   <!-- 上段でスタイルを適用 -->
                   <th class="text-left" style="width:20%">案件名</th>
                   <th class="text-center bg-danger text-white" style="width:10%">必須</th>
-                  <td><input type="text" name="matter-name" class="form-control" placeholder="例）◯◯様" required></td>
+                  <td><input type="text" name="matter_name" class="form-control" placeholder="例）◯◯様" required></td>
                 </tr>
                 <tr>
                   <th class="text-left">対象サーバー</th>
                   <th class="text-center bg-danger text-white">必須</th>
-                  <td><input type="text" name="target-server" class="form-control" placeholder="host名 or IP" required>
+                  <td><input type="text" name="target_server" class="form-control" placeholder="host名 or IP" required>
                   </td>
                 </tr>
                 <tr>
                   <th class="text-left">対象ドメイン名</th>
                   <th class="text-center bg-danger text-white">必須</th>
-                  <td><input type="text" name="target-domain" class="form-control" placeholder="例）hoge.example.com"
+                  <td><input type="text" name="target_domain" class="form-control" placeholder="例）hoge.example.com"
                       required></td>
                 </tr>
                 <tr>
@@ -75,7 +75,7 @@
                 <tr>
                   <th class="text-left">チケット作成者</th>
                   <th class="text-center bg-danger text-white">必須</th>
-                  <td><select name="person-name" class="selectpicker" id="targetSelect" size="1">
+                  <td><select name="person_name" class="selectpicker" id="targetSelect" size="1">
                       <option>foo</option>
                       <option>bar</option>
                       <option>hoge</option>
@@ -114,7 +114,7 @@
                 <tr>
                   <th class="text-left">コモンネーム（CN）</th>
                   <th class="text-center bg-danger text-white">必須</th>
-                  <td><input type="text" name="common-name" class="form-control" placeholder="例）hoge.example.com"
+                  <td><input type="text" name="common_name" class="form-control" placeholder="例）hoge.example.com"
                       required></td>
                 </tr>
                 <tr>
@@ -126,7 +126,7 @@
                 <tr>
                   <th class="text-left">部署名（OU)</th>
                   <th class="text-center bg-danger text-white">必須</th>
-                  <td><input type="text" name="organizational-unit-name" class="form-control"
+                  <td><input type="text" name="organizational_unit_name" class="form-control"
                       placeholder="例）Head Office" required></td>
                 </tr>
               </tbody>
