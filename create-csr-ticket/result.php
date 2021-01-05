@@ -49,20 +49,88 @@ $organizational_unit_name = h($_POST[organizational_unit_name]); //部署名
 
 </head>
 <body>
-  <p><?php echo $matter_name; ?></p>
-  <p><?php echo $target_server; ?></p>
-  <p><?php echo $target_domain; ?></p>
-  <p><?php echo $purpose; ?></p>
-  <p><?php echo $deadline; ?></p>
-  <p><?php echo $report; ?></p>
-  <p><?php echo $person_name ?></p>
-  <p><?php echo $other; ?></p>
-  <p><?php echo $country; ?></p>
-  <p><?php echo $state; ?></p>
-  <p><?php echo $municipalities; ?></p>
-  <p><?php echo $common_name; ?></p>
-  <p><?php echo $organization; ?></p>
-  <p><?php echo $organizational_unit_name; ?></p>
+  <header>
+    <h1>チケットを作成しました</h1>
+    <h2><a href="">○○様　＞　CSRの作成</a></h2>
+  </header>
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <!-- 今回はなし -->
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-left" style="width: 20%;">案件名</th>
+                <td><?php echo $matter_name; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">対象サーバー</th>
+                <td><?php echo $target_server; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">対象ドメイン名</th>
+                <td><?php echo $target_domain; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">作業目的</th>
+                <td><?php echo $purpose; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">期限</th>
+                <td><?php echo $deadline; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">報告内容</th>
+                <td><?php echo $report; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">チケット作成者</th>
+                <td><?php echo $person_name ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">その他</th>
+                <td><?php echo $other; ?></td>
+              </tr>
+              <tr>
+                <!-- 空行を追加 -->
+                <td colspan="2"></td>
+              </tr>
+              <tr>
+                <th colspan="2" class="text-center">CSR情報</th>
+              </tr>
+              <tr>
+                <th class="text-left">国（C）</th>
+                <td><?php echo $country; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">都道府県（S）</th>
+                <td><?php echo $state; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">市区町村（L）</th>
+                <td><?php echo $municipalities; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">コモンネーム（CN）</th>
+                <td><?php echo $common_name; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">組織名（O）</th>
+                <td><?php echo $organization; ?></td>
+              </tr>
+              <tr>
+                <th class="text-left">部署名（OU）</th>
+                <td><?php echo $organizational_unit_name; ?></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
