@@ -1,6 +1,11 @@
 h1 {
   text-align: center;
-  margin: 1rem 0;/*上ちょっとあける*/
+  margin: 1rem 0;/*上下ちょっとあける*/
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 1rem 0;/*下ちょっとあける*/
 }
 
 button{
