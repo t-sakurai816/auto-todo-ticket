@@ -17,6 +17,7 @@ $other                    = h($_POST[other]); //その他
 $country                  = h($_POST[country]); //国
 $state                    = h($_POST[state]); //都道府県
 $municipalities           = h($_POST[municipalities]); //市区町村
+$common_name              = h($_POST[common_name]); //コモンネーム
 $organization             = h($_POST[organization]); //組織
 $organizational_unit_name = h($_POST[organizational_unit_name]); //部署名
 
