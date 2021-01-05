@@ -49,6 +49,20 @@ $organizational_unit_name = h($_POST[organizational_unit_name]); //部署名
 
 </head>
 <body>
-  <?php echo $matter_name; ?>
+  <p><?php echo $matter_name; ?></p>
+  <p><?php echo $target_server; ?></p>
+  <p><?php echo $target_domain; ?></p>
+  <p><?php echo $purpose; ?></p>
+  <p><?php echo $deadline; ?></p>
+  <p><?php echo $report; ?></p>
+  <p><?php echo $person_name ?></p>
+  <p><?php echo $other; ?></p>
+  <p><?php echo $country; ?></p>
+  <p><?php echo $state; ?></p>
+  <p><?php echo $municipalities; ?></p>
+  <p><?php echo $common_name; ?></p>
+  <p><?php echo $organization; ?></p>
+  <p><?php echo $organizational_unit_name; ?></p>
+
 </body>
 </html>
