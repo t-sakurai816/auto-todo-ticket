@@ -2,8 +2,8 @@
 //CSR作成のチケットを作成する
 function create_ticket_csr($matter_name,$target_server,$target_domain,$purpose,$deadline,$report,$person_name,$other,$country,$state,$municipalities,$common_name,$organization,$organizational_unit_name)
 {
-  require 'vendor/autoload.php';
-  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+  require dirname(__FILE__).'/../vendor/autoload.php'; //vendorディレクトリの階層を指定する
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__. '/..'); //.envの階層を指定する
   $dotenv->load();
   
   $host = 'towninc.backlog.jp';
@@ -74,19 +74,19 @@ function create_ticket_csr($matter_name,$target_server,$target_domain,$purpose,$
   echo $response;
 }
 
-// create_ticket_csr(
-//   'テスト様',
-//   'xx.xx.xx.xx',
-//   'hoge.example.com',
-//   'CSRの作成',
-//   '2021/01/08',
-//   '設定完了報告、zipファイルの添付',
-//   'テスト太郎',
-//   'その他',
-//   'JP',
-//   'Tokyo',
-//   'Chuo-ku',
-//   'hoge.exaple.com',
-//   '-',
-//   '-'
-// );
+create_ticket_csr(
+  'テスト様',
+  'xx.xx.xx.xx',
+  'hoge.example.com',
+  'CSRの作成',
+  '2021/01/08',
+  '設定完了報告、zipファイルの添付',
+  'テスト太郎',
+  'その他',
+  'JP',
+  'Tokyo',
+  'Chuo-ku',
+  'hoge.exaple.com',
+  '-',
+  '-'
+);
