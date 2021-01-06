@@ -1,0 +1,15 @@
+/* すべてのファイルで同じスタイリング。
+共通のcss */
+h1 {
+  text-align: center;
+  margin: 1rem 0;/*上下ちょっとあける*/
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 1rem 0;/*下ちょっとあける*/
+}
+
+button{
+  margin: 1rem 0 2.5rem 0;/*上右下左*/
+}
