@@ -71,22 +71,8 @@ function create_ticket_csr($matter_name,$target_server,$target_domain,$purpose,$
 
   $url = 'https://' . $host . '/api/v2/issues?apiKey=' . $apiKey . '&' . http_build_query($params, '', '&');
   $response = file_get_contents($url, false, stream_context_create($context));
-  echo $response;
+  // echo $response;
+
+  $result = json_decode($response,true);
 }
 
-create_ticket_csr(
-  'テスト様',
-  'xx.xx.xx.xx',
-  'hoge.example.com',
-  'CSRの作成',
-  '2021/01/08',
-  '設定完了報告、zipファイルの添付',
-  'テスト太郎',
-  'その他',
-  'JP',
-  'Tokyo',
-  'Chuo-ku',
-  'hoge.exaple.com',
-  '-',
-  '-'
-);

@@ -1,4 +1,5 @@
 <?php
+require_once('create_ticket.php'); //CSR作成チケットのファイルを読み込み
 
 // エスケープ処理
 function h($s) {
@@ -25,6 +26,24 @@ $organizational_unit_name = h($_POST[organizational_unit_name]); //部署名
 if (empty($other)) {
   $other = "なし";
 }
+
+//読み込んだ関数を利用してチケットを作成する
+create_ticket_csr(
+  $matter_name,
+  $target_server,
+  $target_domain,
+  $purpose,
+  $deadline,
+  $report,
+  $person_name,
+  $other,
+  $country,
+  $state,
+  $municipalities,
+  $common_name,
+  $organization ,
+  $organizational_unit_name
+);
 
 ?>
 
@@ -56,7 +75,7 @@ if (empty($other)) {
 <body>
   <header>
     <h1>チケットを作成しました</h1>
-    <h2><a href=""><?php echo $matter_name; ?>　＞　CSRの作成</a></h2>
+    <h2><a href="<?php echo 'https://towninc.backlog.jp/view/'.$result['issueKey']; ?>"><?php echo $matter_name; ?>　＞　CSRの作成</a></h2>
   </header>
   <div class="main">
     <div class="container">
