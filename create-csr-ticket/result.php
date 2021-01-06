@@ -21,6 +21,11 @@ $common_name              = h($_POST[common_name]); //コモンネーム
 $organization             = h($_POST[organization]); //組織
 $organizational_unit_name = h($_POST[organizational_unit_name]); //部署名
 
+//もしその他が空欄だったら、なしを代入
+if (empty($other)) {
+  $other = "なし";
+}
+
 ?>
 
 <!DOCTYPE html>
