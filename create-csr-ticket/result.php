@@ -56,7 +56,7 @@ if (empty($other)) {
 <body>
   <header>
     <h1>チケットを作成しました</h1>
-    <h2><a href="">○○様　＞　CSRの作成</a></h2>
+    <h2><a href=""><?php echo $matter_name; ?>　＞　CSRの作成</a></h2>
   </header>
   <div class="main">
     <div class="container">
