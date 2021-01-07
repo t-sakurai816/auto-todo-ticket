@@ -2,7 +2,7 @@
 共通のcss */
 h1 {
   text-align: center;
-  margin: 1rem 0;/*上下ちょっとあける*/
+  padding: 1rem 0;/*上下ちょっとあける*/
 }
 
 h2 {
