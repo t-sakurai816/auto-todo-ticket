@@ -13,3 +13,7 @@ h2 {
 button{
   margin: 1rem 0 2.5rem 0;/*上右下左*/
 }
+
+footer {
+  height: 20vh;
+}
