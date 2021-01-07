@@ -2,7 +2,7 @@
 共通のcss */
 h1 {
   text-align: center;
-  margin: 1rem 0;/*上下ちょっとあける*/
+  padding: 1rem 0;/*上下ちょっとあける*/
 }
 
 h2 {
@@ -12,4 +12,13 @@ h2 {
 
 button{
   margin: 1rem 0 2.5rem 0;/*上右下左*/
+}
+
+footer {
+  height: 10vh;
+}
+
+.to-list-page {
+  padding: 1rem 0;/*上下ちょっとあける*/
+  text-align: center;
 }
