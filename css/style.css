@@ -10,6 +10,13 @@ h2 {
   margin: 0 0 1rem 0;/*下ちょっとあける*/
 }
 
+span {
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color:#dc3545;
+  color: white;
+}
+
 button{
   margin: 1rem 0 2.5rem 0;/*上右下左*/
 }
