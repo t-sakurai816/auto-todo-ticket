@@ -15,5 +15,10 @@ button{
 }
 
 footer {
-  height: 20vh;
+  height: 10vh;
+}
+
+.to-list-page {
+  padding: 1rem 0;/*上下ちょっとあける*/
+  text-align: center;
 }
