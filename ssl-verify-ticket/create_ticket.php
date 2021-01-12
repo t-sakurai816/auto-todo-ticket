@@ -15,7 +15,7 @@ function create_ticket($matter_name,$target_server,$target_domain,$premise_ticke
 
   $params = array(
     'projectId' => $_ENV["PROJECTID"], //HCN
-    'summary' => $matter_name.'　＞　CSRの作成', //課題の件名
+    'summary' => $matter_name.'　＞　証明書の検証', //課題の件名
     'description' => <<< EOM
   ```
   【案件名】
@@ -32,12 +32,11 @@ function create_ticket($matter_name,$target_server,$target_domain,$premise_ticke
   $deadline
   【報告内容】
   $report
-  
   【チケット作成者】
   $person_name
-  
   【その他】
-  $other 
+  $other
+  ``` 
   
   ## SSL証明書(CRT)
 
