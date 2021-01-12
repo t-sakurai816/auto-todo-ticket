@@ -25,13 +25,83 @@
 
 <body>
   <header>
-    <h1>証明書の適用</h1>
+    <h1>チケットを作成しました</h1>
+    <!-- <h2></h2> -->
   </header>
   <div class="main">
-
+    <div class="container">
+      <div class="row">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <!-- 今回はなし -->
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-left" style="width: 20%;">案件名</th>
+                <td>
+                  <?php echo $matter_name; ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">対象サーバー</th>
+                <td>
+                  <?php echo $target_server; ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">対象ドメイン名</th>
+                <td>
+                  <?php echo $target_domain; ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">前提チケット</th>
+                <td>
+                  <?php echo $premise_ticket; ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">作業目的</th>
+                <td>
+                  <?php echo $purpose; ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">期限</th>
+                <td>
+                  <?php echo $deadline ." ". $start_time ."-". $end_time; ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">報告内容</th>
+                <td>
+                  <?php echo $report; ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">チケット作成者</th>
+                <td>
+                  <?php echo $person_name ?>
+                </td>
+              </tr>
+              <tr>
+                <th class="text-left">その他</th>
+                <td>
+                  <?php echo $other; ?>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
   <footer>
-
+    <hr>
+    <div class="to-list-page">
+      <h3><a href="../index.php">チケット自動作成一覧へ</a></h3>
+    </div>
   </footer>
 </body>
 
