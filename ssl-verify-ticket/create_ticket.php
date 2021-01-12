@@ -76,21 +76,7 @@ function create_ticket($matter_name,$target_server,$target_domain,$premise_ticke
 
   $url = 'https://' . $host . '/api/v2/issues?apiKey=' . $apiKey . '&' . http_build_query($params, '', '&');
   $response = file_get_contents($url, false, stream_context_create($context));
-  echo $response;
+  // echo $response;
 
   $result = json_decode($response,true);
 }
-
-create_ticket(
-  "テスト様",
-  "54.168.42.128",
-  "hoge.example.com",
-  "https://towninc.backlog.jp/view/CI-9982",
-  "証明書の検証",
-  "2021-01-15",
-  "検証結果",
-  "ほげ",
-  "なし",
-  "証明書の情報",
-  "中間証明書の情報"
-);
