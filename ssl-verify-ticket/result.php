@@ -1,3 +1,45 @@
+<?php
+require_once('create_ticket.php'); //CSR作成チケットのファイルを読み込み
+
+// エスケープ処理
+function h($s) {
+  return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
+  }
+
+// POSTを受け取る
+$matter_name   = h($_POST[matter_name]); //案件名
+$target_server   = h($_POST[target_server]); //対象サーバー
+$target_domain = h($_POST[target_domain]); //対象サーバー
+$premise_ticket = h($_POST[premise_ticket]); //前提チケット
+$purpose          = h($_POST[purpose]); //作業目的
+$deadline          = h($_POST[deadline]); //期限
+$report             = h($_POST[report]); //報告内容
+$person_name   = h($_POST[person_name]); //チケット作成者
+$other               = h($_POST[other]); //その他
+$crt                   = h($_POST[crt]); //証明書
+$ca                    = h($_POST[ca]); //中間証明書
+
+//もしその他が空欄だったら、なしを代入
+if (empty($other)) {
+  $other = "なし";
+}
+
+//読み込んだ関数を利用してチケットを作成する
+create_ticket_csr(
+  $matter_name,
+  $target_server,
+  $target_domain,
+  $premise_ticket,
+  $purpose,
+  $deadline,
+  $report,
+  $person_name,
+  $other,
+  $crt,
+  $ca
+);
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
