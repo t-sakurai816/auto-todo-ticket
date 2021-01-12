@@ -15,7 +15,7 @@ function create_ticket($matter_name,$target_server,$target_domain,$premise_ticke
 
   $params = array(
     'projectId' => $_ENV["PROJECTID"], //HCN
-    'summary' => $matter_name.'　＞　証明書の適用（'. $target_domain. '）（'.$deadline + $start_time .'-'. $end_time.'）', //課題の件名
+    'summary' => $matter_name.'　＞　証明書の適用（'. $target_domain. '）（'.$deadline . " ". $start_time .'-'. $end_time.'）', //課題の件名
     'description' => <<< EOM
   ```
   【案件名】
@@ -69,7 +69,7 @@ function create_ticket($matter_name,$target_server,$target_domain,$premise_ticke
 
   $result = json_decode($response,true);
 }
-create_function(
+create_ticket(
   "テスト様",
   "54.168.42.128",
   "hoge.example.com",
