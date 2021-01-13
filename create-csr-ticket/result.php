@@ -7,20 +7,20 @@ function h($s) {
   }
 
 // POSTを受け取る
-$matter_name              = h($_POST[matter_name]); //案件名
-$target_server            = h($_POST[target_server]); //対象サーバー
-$target_domain            = h($_POST[target_domain]); //対象サーバー
-$purpose                  = h($_POST[purpose]); //作業目的
-$deadline                 = h($_POST[deadline]); //期限
-$report                   = h($_POST[report]); //報告内容
-$person_name              = h($_POST[person_name]); //チケット作成者
-$other                    = h($_POST[other]); //その他
-$country                  = h($_POST[country]); //国
-$state                    = h($_POST[state]); //都道府県
-$municipalities           = h($_POST[municipalities]); //市区町村
-$common_name              = h($_POST[common_name]); //コモンネーム
-$organization             = h($_POST[organization]); //組織
-$organizational_unit_name = h($_POST[organizational_unit_name]); //部署名
+$matter_name              = h($_POST['matter_name']); //案件名
+$target_server            = h($_POST['target_server']); //対象サーバー
+$target_domain            = h($_POST['target_domain']); //対象サーバー
+$purpose                  = h($_POST['purpose']); //作業目的
+$deadline                 = h($_POST['deadline']); //期限
+$report                   = h($_POST['report']); //報告内容
+$person_name              = h($_POST['person_name']); //チケット作成者
+$other                    = h($_POST['other']); //その他
+$country                  = h($_POST['country']); //国
+$state                    = h($_POST['state']); //都道府県
+$municipalities           = h($_POST['municipalities']); //市区町村
+$common_name              = h($_POST['common_name']); //コモンネーム
+$organization             = h($_POST['organization']); //組織
+$organizational_unit_name = h($_POST['organizational_unit_name']); //部署名
 
 //もしその他が空欄だったら、なしを代入
 if (empty($other)) {
@@ -69,7 +69,7 @@ create_ticket_csr(
   <!-- favicon -->
   <link rel="shortcut icon" href="../../auto-todo-ticket/favicon.ico" type="image/x-icon">
   <!-- css -->
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
