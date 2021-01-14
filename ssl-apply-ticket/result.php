@@ -54,20 +54,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){//リクエストがPOSTなら
   $_SESSION['response'] = "フォームから入力してください<br>".'<a href="./index.php">フォームへ</a>';
   //formへ促す
 }  
-//読み込んだ関数を利用してチケットを作成する
-// create_ticket_csr(
-//   $matter_name,
-//   $target_server,
-//   $target_domain,
-//   $premise_ticket,
-//   $purpose,
-//   $deadline,
-//   $start_time,
-//   $end_time,
-//   $report,
-//   $person_name,
-//   $other,
-// );
 
 ?>
 <!DOCTYPE html>
