@@ -18,7 +18,7 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">¸
 </head>
 
 <body>
@@ -27,9 +27,9 @@
   </header>
   <div class="main">
     <div class="container">
-      <li><a href="./create-csr-ticket/index.html">CSRの作成</a></li>
-      <li><a href="./ssl-verify-ticket/index.html">証明書の検証</a></li>
-      <li><a href="./ssl-apply-ticket/index.html">証明書の適用</a></li>
+      <li><a href="./create-csr-ticket/index.php">CSRの作成</a></li>
+      <li><a href="./ssl-verify-ticket/index.php">証明書の検証</a></li>
+      <li><a href="./ssl-apply-ticket/index.php">証明書の適用</a></li>
     </div>
   </div>
   <footer>
