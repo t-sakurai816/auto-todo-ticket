@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('create_ticket.php'); //CSR作成チケットのファイルを読み込み
 
 // エスケープ処理
@@ -27,23 +28,40 @@ if (empty($other)) {
   $other = "なし";
 }
 
-//読み込んだ関数を利用してチケットを作成する
-create_ticket_csr(
-  $matter_name,
-  $target_server,
-  $target_domain,
-  $purpose,
-  $deadline,
-  $report,
-  $person_name,
-  $other,
-  $country,
-  $state,
-  $municipalities,
-  $common_name,
-  $organization ,
-  $organizational_unit_name
-);
+//直アクセスを判定
+if($_SERVER['REQUEST_METHOD'] === 'POST'){//リクエストがPOSTなら
+  // リロードされているかを判定
+  if ($_SESSION['user']['reload'] === $_POST['reload']) {
+    //一致するならセッションデータを消す。
+    $_SESSION['user']['reload'] = "";
+    //チケットを作成
+    //読み込んだ関数を利用してチケットを作成する
+    create_ticket_csr(
+      $matter_name,
+      $target_server,
+      $target_domain,
+      $purpose,
+      $deadline,
+      $report,
+      $person_name,
+      $other,
+      $country,
+      $state,
+      $municipalities,
+      $common_name,
+      $organization ,
+      $organizational_unit_name
+    );
+  } else {
+    // リロードされたとき
+    $_SESSION['response'] = "リロードしないでください";
+  }
+}else{
+  // 直アクセスされたとき
+  $_SESSION['response'] = "フォームから入力してください<br>".'<a href="./index.php">フォームへ</a>';
+  //formへ促す
+}  
+
 
 ?>
 
@@ -74,8 +92,7 @@ create_ticket_csr(
 </head>
 <body>
   <header>
-    <h1>チケットを作成しました</h1>
-    <h2><a href="<?php echo 'https://towninc.backlog.jp/view/'.$result['issueKey']; ?>"><?php echo $matter_name; ?>　＞　CSRの作成</a></h2>
+    <h1><?php echo $_SESSION['response']; ?></h1>
   </header>
   <div class="main">
     <div class="container">
