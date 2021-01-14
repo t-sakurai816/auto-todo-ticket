@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$_SESSION['user']['reload'] = "taisaku";
+$reload_off = $_SESSION['user']['reload'];
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -34,6 +41,8 @@
         <div class="table-responsive">
           <table class="table table-bordered">
             <form action="result.php" method="post" id="ssl-verify-form">
+            <!-- リロード判定用 -->
+            <input type="hidden" name="reload" value=<?php echo $reload_off; ?>>
               <thead>
                 <!-- 今回はなし -->
               </thead>

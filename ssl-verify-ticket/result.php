@@ -23,9 +23,39 @@ $ca                    = h($_POST['ca']); //中間証明書
 if (empty($other)) {
   $other = "なし";
 }
+//直アクセスを判定
+if($_SERVER['REQUEST_METHOD'] === 'POST'){//リクエストがPOSTなら
+  // リロードされているかを判定
+  if ($_SESSION['user']['reload'] === $_POST['reload']) {
+    //一致するならセッションデータを消す。
+    $_SESSION['user']['reload'] = "";
+    //チケットを作成
+    //読み込んだ関数を利用してチケットを作成する
+    create_ticket(
+      $matter_name,
+      $target_server,
+      $target_domain,
+      $premise_ticket,
+      $purpose,
+      $deadline,
+      $report,
+      $person_name,
+      $other,
+      $crt,
+      $ca
+    );
+  } else {
+    // リロードされたとき
+    $_SESSION['response'] = "リロードしないでください";
+  }
+}else{
+  // 直アクセスされたとき
+  $_SESSION['response'] = "フォームから入力してください<br>".'<a href="./index.php">フォームへ</a>';
+  //formへ促す
+}  
 
 //読み込んだ関数を利用してチケットを作成する
-create_ticket_csr(
+create_ticket(
   $matter_name,
   $target_server,
   $target_domain,

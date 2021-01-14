@@ -68,17 +68,16 @@ function create_ticket($matter_name,$target_server,$target_domain,$premise_ticke
   // echo $response;
 
   $result = json_decode($response,true);
+  $array_keys = array_keys($result);
+
+  
+  if($array_keys['0'] === 'errors'){//もし結果がエラーだったら
+    // 管理者への確認を促すとともに、エラーコードを表示する
+    $_SESSION['response'] ="エラーです。<br>管理者に確認してください<br>エラーコード : ". $result['errors']['0']['message'];
+  }else{//成功したら
+    // チケット作成のメッセージと共に、チケットへのリンクを表示する
+    $_SESSION['response'] = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'].'">'. $summary .'　＞　CSRの作成</a>';
+  }
+
+  return $response;
 }
-create_ticket(
-  "テスト様",
-  "54.168.42.128",
-  "hoge.example.com",
-  "https://towninc.backlog.jp/view/CI-10017",
-  "証明書の適用",
-  "2021/01/15",
-  "16:00",
-  "16:30",
-  "設定完了報告",
-  "foo",
-  "なし"
-);
