@@ -12,6 +12,7 @@ function create_ticket($matter_name,$target_server,$target_domain,$premise_ticke
   //今日の日付を取得
   $timestamp = time();
   $today = date('Y-m-d', $timestamp);
+  $today = str_replace("-","/","$today"); //2021/01/14の形に置き換え（/にすることでSlackのアラート部屋に通知できるようにする
 
   $params = array(
     'projectId' => $_ENV["PROJECTID"], //HCN
