@@ -82,7 +82,7 @@ function create_ticket_csr($matter_name,$target_server,$target_domain,$purpose,$
     $_SESSION['response'] ="エラーです。<br>管理者に確認してください<br>エラーコード : ". $result['errors']['0']['message'];
   }else{//成功したら
     // チケット作成のメッセージと共に、チケットへのリンクを表示する
-    $_SESSION['response'] = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'].'">'. $summary .'　＞　CSRの作成</a>';
+    $_SESSION['response'] = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'].'">'. $matter_name .'　＞　CSRの作成</a>';
   }
 
   return $response;
