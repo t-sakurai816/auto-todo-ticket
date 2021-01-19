@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){//リクエストがPOSTなら
     $_SESSION['user']['reload'] = "";
     //チケットを作成
     //読み込んだ関数を利用してチケットを作成する
-    $result = create_ticket(
+    $result = main(
       $matter_name,
       $target_server,
       $target_domain,
