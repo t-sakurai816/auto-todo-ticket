@@ -1,5 +1,6 @@
 <?php
-require_once('create_ticket.php'); //CSR作成チケットのファイルを読み込み
+session_start();
+require_once('main.php'); //証明書の検証チケット作成のファイルを読み込み
 
 // エスケープ処理
 function h($s) {
@@ -31,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){//リクエストがPOSTなら
     $_SESSION['user']['reload'] = "";
     //チケットを作成
     //読み込んだ関数を利用してチケットを作成する
-    create_ticket(
+    $result = main(
       $matter_name,
       $target_server,
       $target_domain,
@@ -46,28 +47,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){//リクエストがPOSTなら
     );
   } else {
     // リロードされたとき
-    $_SESSION['response'] = "リロードしないでください";
+    $result = "リロードしないでください";
   }
 }else{
   // 直アクセスされたとき
-  $_SESSION['response'] = "フォームから入力してください<br>".'<a href="./index.php">フォームへ</a>';
+  $result = "フォームから入力してください<br>".'<a href="./index.php">フォームへ</a>';
   //formへ促す
 }  
 
-//読み込んだ関数を利用してチケットを作成する
-create_ticket(
-  $matter_name,
-  $target_server,
-  $target_domain,
-  $premise_ticket,
-  $purpose,
-  $deadline,
-  $report,
-  $person_name,
-  $other,
-  $crt,
-  $ca
-);
 
 ?>
 <!DOCTYPE html>
@@ -97,8 +84,7 @@ create_ticket(
 
 <body>
   <header>
-    <h1>チケットを作成しました</h1>
-    <!-- <h2></h2> -->
+    <h1><?php echo $result; ?></h1>
   </header>
   <div class="main">
     <div class="container">
