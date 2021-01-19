@@ -1,5 +1,5 @@
 <?php
-require_once('ssl_apply_info.php');
+require_once('ssl_verify_info.php');
 require_once('log_save.php');
 
 //環境変数を読み込み
