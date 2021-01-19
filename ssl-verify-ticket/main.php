@@ -56,12 +56,10 @@ function error_check($response, $matter_name, $purpose){
 
   if($array_keys['0'] === 'errors'){//もし結果がエラーだったら
     // 管理者への確認を促すとともに、エラーコードを表示する
-    // $_SESSION['response'] ="エラーです。<br>管理者に確認してください<br>エラーコード : ". $result['errors']['0']['message'];
     $result = "エラーです。<br>管理者に確認してください<br>エラーコード : ". $result['errors']['0']['message'];
     echo $result;
   }else{//成功したら
     // チケット作成のメッセージと共に、チケットへのリンクを表示する
-    // $_SESSION['response'] = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'].'">'. $matter_name .'　＞　CSRの作成</a>';
     $result = "チケットを作成しました ".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'] .'">'. $matter_name .'　＞　'.$purpose.'</a>';
     // echo $result;
 
