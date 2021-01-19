@@ -172,6 +172,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){//リクエストがPOSTなら
       </div>
     </div>
   </div>
-
+  <footer>
+    <hr>
+    <div class="to-list-page">
+      <h3><a href="../index.php">チケット自動作成一覧へ</a></h3>
+    </div>
+  </footer>
 </body>
 </html>
