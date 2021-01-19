@@ -13,18 +13,18 @@ function load_env_file(){
 function get_today(){
   $timestamp = time();
   $today = date('Y-m-d', $timestamp); //今日の日付を取得
-  $today = str_replace("-","","$today"); //連続した数字で出力する
+  // $today = str_replace("-","","$today"); //連続した数字で出力する
   // echo $today;
   return $today;
 }
 
 // チケットを作成
-function create_ticket($today, $matter_name, $description){
+function create_ticket($today, $matter_name, $purpose, $description){
   $host = 'towninc.backlog.jp';
   $apiKey = $_ENV["APIKEY"];
   $params = array(
     'projectId' => $_ENV["PROJECTID"], //HCN
-    'summary' => $matter_name.'　＞　CSRの作成', //課題の件名
+    'summary' => $matter_name.'　＞　'.$purpose, //課題の件名
     'description' => $description, //課題の詳細
     'startDate' => $today, //課題の開始日
     'dueDate' => $today, //課題の期限日
@@ -50,7 +50,7 @@ function create_ticket($today, $matter_name, $description){
 }
 
 //エラーチェック
-function error_check($response){
+function error_check($response, $matter_name, $purpose){
   $result = json_decode($response,true);
   $array_keys = array_keys($result);
 
@@ -62,8 +62,10 @@ function error_check($response){
   }else{//成功したら
     // チケット作成のメッセージと共に、チケットへのリンクを表示する
     // $_SESSION['response'] = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'].'">'. $matter_name .'　＞　CSRの作成</a>';
-    $result = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'] .'">'. $matter_name .'　＞　CSRの作成</a>';
-    echo $result;
+    $result = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'] .'">'. $matter_name .'　＞　'.$purpose.'</a>';
+    // echo $result;
+
+    return $result;
   }
 }
 
@@ -73,9 +75,9 @@ function main($matter_name,$target_server,$target_domain,$purpose,$deadline,$rep
   $today = get_today();
   $description = description($matter_name,$target_server,$target_domain,$purpose,$deadline,$report,$person_name,$other,$country,$state,$municipalities,$common_name,$organization,$organizational_unit_name);
 
-  $response =  create_ticket($dotenv, $today, $matter_name, $description);
+  $response =  create_ticket($today, $matter_name, $purpose, $description);
 
-  $result = error_check($response);
+  $result = error_check($response, $matter_name, $purpose);
 
   return $result;
 }
