@@ -1,5 +1,6 @@
 <?php
 require_once('csr_ticket_info.php');
+require_once('log_save.php');
 
 //環境変数を読み込み
 function load_env_file(){
@@ -13,7 +14,6 @@ function load_env_file(){
 function get_today(){
   $timestamp = time();
   $today = date('Y-m-d', $timestamp); //今日の日付を取得
-  // $today = str_replace("-","","$today"); //連続した数字で出力する
   // echo $today;
   return $today;
 }
@@ -76,6 +76,9 @@ function main($matter_name,$target_server,$target_domain,$purpose,$deadline,$rep
   $description = description($matter_name,$target_server,$target_domain,$purpose,$deadline,$report,$person_name,$other,$country,$state,$municipalities,$common_name,$organization,$organizational_unit_name);
 
   $response =  create_ticket($today, $matter_name, $purpose, $description);
+
+  //logを保存
+  log_save($response);
 
   $result = error_check($response, $matter_name, $purpose);
 
