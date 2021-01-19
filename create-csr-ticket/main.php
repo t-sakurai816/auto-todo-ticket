@@ -62,7 +62,7 @@ function error_check($response, $matter_name, $purpose){
   }else{//成功したら
     // チケット作成のメッセージと共に、チケットへのリンクを表示する
     // $_SESSION['response'] = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'].'">'. $matter_name .'　＞　CSRの作成</a>';
-    $result = "チケットを作成しました<br>".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'] .'">'. $matter_name .'　＞　'.$purpose.'</a>';
+    $result = "チケットを作成しました ".'<a href="'. "https://towninc.backlog.jp/view/" .$result['issueKey'] .'">'. $matter_name .'　＞　'.$purpose.'</a>';
     // echo $result;
 
     return $result;
