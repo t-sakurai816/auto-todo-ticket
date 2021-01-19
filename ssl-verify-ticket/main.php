@@ -19,13 +19,12 @@ function get_today(){
 }
 
 // チケットを作成
-function create_ticket($today, $matter_name, $target_domain, $purpose, $description, $deadline, $start_time, $end_time){
-  $deadline = str_replace("-","/","$deadline"); // 2020/01/01の形で表す
+function create_ticket($today, $matter_name, $description){
   $host = 'towninc.backlog.jp';
   $apiKey = $_ENV["APIKEY"];
   $params = array(
     'projectId' => $_ENV["PROJECTID"], //HCN
-    'summary' => $matter_name.'　＞　証明書の適用（'. $target_domain. '）（'.$deadline . " ". $start_time .'-'. $end_time.'）', //課題の件名
+    'summary' => $matter_name.'　＞　証明書の検証', //課題の件名
     'description' => $description, //課題の詳細
     'startDate' => $today, //課題の開始日
     'dueDate' => $today, //課題の期限日
@@ -70,13 +69,13 @@ function error_check($response, $matter_name, $purpose){
   }
 }
 
-function main($matter_name, $target_server, $target_domain , $premise_ticket, $purpose, $deadline, $start_time, $end_time, $report, $person_name, $other){
+function main($matter_name,$target_server,$target_domain,$premise_ticket,$purpose,$deadline,$report,$person_name,$other,$crt,$ca){
 
   $dotenv = load_env_file();
   $today = get_today();
-  $description = description($matter_name,$target_server,$target_domain,$premise_ticket,$purpose,$deadline,$start_time,$end_time,$report,$person_name,$other);
+  $description = description($matter_name,$target_server,$target_domain,$premise_ticket,$purpose,$deadline,$report,$person_name,$other,$crt,$ca);
 
-  $response =  create_ticket($today, $matter_name, $target_domain, $purpose, $description, $deadline, $start_time, $end_time);
+  $response =  create_ticket($today, $matter_name, $description);
 
   //logを保存
   log_save($response);
