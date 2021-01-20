@@ -17,9 +17,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css">¸
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- document : https://getbootstrap.jp/docs/4.2/components/list-group/ -->
 
 <body>
   <header>
@@ -27,9 +28,17 @@
   </header>
   <div class="main">
     <div class="container">
-      <li><a href="./create-csr-ticket/index.php">CSRの作成</a></li>
-      <li><a href="./ssl-verify-ticket/index.php">証明書の検証</a></li>
-      <li><a href="./ssl-apply-ticket/index.php">証明書の適用</a></li>
+      <ul class="list-group">
+        <a href="./create-csr-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center">
+          CSRの作成
+        </a>
+        <a href="./ssl-verify-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center">
+          証明書の検証
+        </a>
+        <a href="./ssl-apply-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center">
+          証明書の適用
+        </a>
+      </ul>
     </div>
   </div>
   <footer>
