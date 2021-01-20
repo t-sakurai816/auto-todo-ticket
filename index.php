@@ -28,14 +28,15 @@
   </header>
   <div class="main">
     <div class="container">
-      <ul class="list-group">
-        <a href="./create-csr-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center">
+      <ul class="list-group align-items-center"><!--list-groupを作って各要素を中央寄せ-->
+        <a href="./create-csr-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center col-xs-12 col-sm-12 col-md-6">
+          <!-- 枠がついたリストを作成して、それぞれをリンクにする。テキストを青(primary)にして中央寄せ。スマホ・タブレットサイズは横幅いっぱい、PCサイズは半分の横幅 -->
           CSRの作成
         </a>
-        <a href="./ssl-verify-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center">
+        <a href="./ssl-verify-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center col-xs-12 col-sm-12 col-md-6 ">
           証明書の検証
         </a>
-        <a href="./ssl-apply-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center">
+        <a href="./ssl-apply-ticket/index.php" class="list-group-item list-group-item-action text-primary text-center col-xs-12 col-sm-12 col-md-6">
           証明書の適用
         </a>
       </ul>
