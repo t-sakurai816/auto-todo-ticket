@@ -19,18 +19,19 @@ function get_today(){
 }
 
 // チケットを作成
-function create_ticket($today, $matter_name, $description){
+function create_ticket($today, $matter_name, $target_domain, $deadline, $description){
   $host = 'towninc.backlog.jp';
   $apiKey = $_ENV["APIKEY"];
   $params = array(
     'projectId' => $_ENV["PROJECTID"], //HCN
-    'summary' => $matter_name.'　＞　証明書の検証', //課題の件名
+    'summary' => $matter_name.'　＞　証明書の検証（'. $target_domain. '）', //課題の件名
     'description' => $description, //課題の詳細
     'startDate' => $today, //課題の開始日
-    'dueDate' => $today, //課題の期限日
-    // 'categoryId[]' => , //カテゴリーID
+    'dueDate' => $deadline, //課題の期限日
+    // 'categoryId' => $_ENV["CATEGORYID"], //カテゴリーID
     'issueTypeId' => $_ENV["ISSUETYPEID"], //タスク
-    'priorityId' => "3" //中
+    'priorityId' => "3", //中
+    'assigneeId' => $_ENV["ASSIGNEELD"] //担当者
   );
 
   $headers = array('Content-Type:application/x-www-form-urlencoded');
@@ -73,7 +74,7 @@ function main($matter_name,$target_server,$target_domain,$premise_ticket,$purpos
   $today = get_today();
   $description = description($matter_name,$target_server,$target_domain,$premise_ticket,$purpose,$deadline,$report,$person_name,$other,$crt,$ca);
 
-  $response =  create_ticket($today, $matter_name, $description);
+  $response =  create_ticket($today, $matter_name, $target_domain, $deadline, $description);
 
   //logを保存
   log_save($response);

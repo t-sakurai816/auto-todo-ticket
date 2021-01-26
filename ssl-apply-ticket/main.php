@@ -20,18 +20,19 @@ function get_today(){
 
 // チケットを作成
 function create_ticket($today, $matter_name, $target_domain, $purpose, $description, $deadline, $start_time, $end_time){
-  $deadline = str_replace("-","/","$deadline"); // 2020/01/01の形で表す
+  $deadline_slash = str_replace("-","/","$deadline"); // 2020/01/01の形で表す
   $host = 'towninc.backlog.jp';
   $apiKey = $_ENV["APIKEY"];
   $params = array(
     'projectId' => $_ENV["PROJECTID"], //HCN
-    'summary' => $matter_name.'　＞　証明書の適用（'. $target_domain. '）（'.$deadline . " ". $start_time .'-'. $end_time.'）', //課題の件名
+    'summary' => $matter_name.'　＞　証明書の適用（'. $target_domain. '）（'.$deadline_slash . " ". $start_time .'-'. $end_time.'）', //課題の件名
     'description' => $description, //課題の詳細
-    'startDate' => $today, //課題の開始日
-    'dueDate' => $today, //課題の期限日
-    // 'categoryId[]' => , //カテゴリーID
+    'startDate' => $deadline, //課題の開始日
+    'dueDate' => $deadline, //課題の期限日
+    // 'categoryId' => $_ENV["CATEGORYID"], //カテゴリーID
     'issueTypeId' => $_ENV["ISSUETYPEID"], //タスク
-    'priorityId' => "3" //中
+    'priorityId' => "3", //中
+    'assigneeId' => $_ENV["ASSIGNEELD"] //担当者
   );
 
   $headers = array('Content-Type:application/x-www-form-urlencoded');
